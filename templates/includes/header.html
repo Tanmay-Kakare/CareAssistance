@@ -1,0 +1,56 @@
+{% load static %}
+
+<header class="p-3 bg-primary text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      
+      <!-- Logo -->
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img src="{% static 'images/care_logo.png' %}" alt="Care Assistance" width="50" class="me-3">
+        <span class="fs-4 fw-bold text-dark">Care Assistance</span>
+      </a>
+
+      <!-- Search Bar -->
+      <form class="d-flex flex-grow-1 mx-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search Assistance" aria-label="Search">
+        <button class="btn btn-warning" type="submit">Search</button>
+      </form>
+
+      <!-- Navigation Links -->
+      <ul class="nav">
+        <li><a href="{% url 'home' %}" class="nav-link px-3 text-white">Home</a></li>
+        <li><a href="{% url 'aboutus' %}" class="nav-link px-3 text-white">Services</a></li>
+        <li><a href="" class="nav-link px-3 text-white">Appointments</a></li>
+      </ul>
+
+      <!-- Alerts & User Dropdown -->
+      <div class="d-flex align-items-center">
+        
+        <!-- Emergency Alert Icon -->
+        <a href="" class="me-3 text-white position-relative">
+          <i class="fas fa-bell fa-lg"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+        </a>
+        
+        <!-- User Dropdown -->
+        <div class="dropdown text-end">
+          <a href="#" class="d-block text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle fa-lg"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small">
+            <li><a class="dropdown-item" href="{% url 'home' %}">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'home' %}">Caregiver Tasks</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'home' %}">Sign out</a></li>
+          </ul>
+        </div>
+        <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-warning">Sign Up</a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Add FontAwesome and Bootstrap for icons and styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
